@@ -28,6 +28,6 @@
             <?php } ?>
         </tbody>
     </table>
-    <a href="create.php">Novo</a>
+    <a href="create.php">Novo</a> 
 </body>
 </html>
