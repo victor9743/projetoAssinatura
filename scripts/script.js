@@ -28,13 +28,12 @@ $(document).ready(function(){
         }
 
         saveBtn.onclick = function (e) {
-            var http = new XMLHttpRequest();
 
             // Converte o canvas para image/png; base64:
             var image = canvas.toDataURL()
 
             // Define a imagem como valor a ser enviado:
-            var params = "image=" + image;
+            var params = image;
             $.ajax({
                 type: "post",
                 beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').last().attr('content'))},
