@@ -16,27 +16,32 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Cliente - Index</title>
 </head>
 <body>
-    <table>
+    <table class="table table-hover">
         <thead>
-            <th>#</th>
-            <th>Cliente</th>
-            <th>Contrato</th>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Contrato</th>
+            </tr>
         </thead>
-        <tbody>
-            <?php for($i=0; $i<count($clientes); $i ++) { ?>
-                <tr>
-                    <td><?= $clientes[$i]['id'] ?></td>
-                    <td><?= $clientes[$i]['cliente'] ?></td>
-                    <!-- <td><button onclick="gerarPdf()" class="vis">visualizar contrato</button></td> -->
-                    <td><button class="vis" value="<?= valueTransform($clientes[$i]['assinatura'], $clientes[$i]['cliente'])  ?>">visualizar contrato</button></td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
-    <a href="create.php">Novo</a>
+            <tbody>
+                <?php for($i=0; $i<count($clientes); $i ++) { ?>
+                    <tr>
+                        <td><?= $clientes[$i]['id'] ?></td>
+                        <td><?= $clientes[$i]['cliente'] ?></td>
+                        <!-- <td><button onclick="gerarPdf()" class="vis">visualizar contrato</button></td> -->
+                        <td><button class="vis btn btn-outline-secondary" value="<?= valueTransform($clientes[$i]['assinatura'], $clientes[$i]['cliente'])?>">Visualizar contrato</button></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+    </table>     
+    <a href="create.php" class="btn btn-primary" id="novaAssinatura">Novo</a>
     <script src='../scripts/jquery.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
