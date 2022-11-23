@@ -2,7 +2,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +11,6 @@
     <title>Cliente - Novo</title>
 
 </head>
-
 <body>
     <div class="accordion container-sm" id="accordionExample">
         <h2 class="text-center button-disciplina button-border display-6">Contrato de serviço</h2>
@@ -133,5 +131,4 @@
         }
     </script>
 </body>
-
 </html>
