@@ -9,7 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Cliente - Novo</title>
-
 </head>
 <body>
     <div class="accordion container-sm" id="accordionExample">
@@ -80,8 +79,8 @@
     <label>Assinatura</label>
     <canvas class="container" id="quadro" style="background:beige; margin-center: 275px"></canvas>
     </div>
-    <br><button class="btn btn-primary" id="saveBtn"> Salvar</button>
-    <a class="btn btn-secondary" href="index.php">voltar</a>
+    <br><button class="btn btn-primary" id="saveBtn">Salvar</button>
+    <a class="btn btn-secondary" href="index.php">Voltar</a>
     <script src="../scripts/jquery.js"></script>
     <script>
         window.onload = function () {
