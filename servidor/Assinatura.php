@@ -11,10 +11,20 @@
             $insert = new ConexaoDb();
 
              if($insert->insert($cliente, $assinatura)) {
-                return 1;
+                return true;
              } else {
-                return 2;
+                return false;
              }
 
+        }
+
+        function removerAss($clienteId){
+            $insert = new ConexaoDb();
+
+            if($insert->remove($clienteId)) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }

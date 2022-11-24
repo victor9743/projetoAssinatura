@@ -7,20 +7,13 @@
             return array($assinatura->getAllAss());
         }
 
-        function inserirAssinatura($assinatura, $cliente){
-
-        }
-
-        function buscarAssinatura($id){
-
-        }
-
         function salvarAssinatura($cliente, $assinatura){
-            $assinaturaModel = new Assinatura;    
-            return $assinaturaModel->insertAss($cliente, $assinatura);
+            $assinatura = new Assinatura;    
+            return $assinatura->insertAss($cliente, $assinatura);
         }
 
         function removerAssinatura($id) {
-
+            $assinatura = New Assinatura;
+            return $assinatura->removerAss($id);
         }
     }

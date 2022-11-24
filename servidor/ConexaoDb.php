@@ -27,5 +27,14 @@
             return $stmt->fetchAll();
         }
 
+        protected function remove($id){
+            $stmt = $this->conn->prepare("DELETE FROM assinaturas WHERE id = :CAMPO1;");
+
+            $stmt->bindParam(":CAMPO1", $id);
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        }
+
 
     }

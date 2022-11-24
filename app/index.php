@@ -20,7 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Cliente - Index</title>
 </head>
-<body>
+<body class='container' style="margin-top: 90px">
     <table class="table table-hover">
         <thead>
             <tr>
@@ -34,13 +34,15 @@
                     <tr>
                         <td><?= $clientes[$i]['id'] ?></td>
                         <td><?= $clientes[$i]['cliente'] ?></td>
-                        <!-- <td><button onclick="gerarPdf()" class="vis">visualizar contrato</button></td> -->
-                        <td><button class="vis btn btn-outline-secondary" value="<?= valueTransform($clientes[$i]['assinatura'], $clientes[$i]['cliente'])?>">Visualizar contrato</button></td>
+                        <td><button class="vis btn btn-outline-secondary" value="<?= valueTransform($clientes[$i]['assinatura'], $clientes[$i]['cliente'])?>">Visualizar contrato</button>
+                        <button class= "remover btn btn-danger">Remover</button></td>
                     </tr>
                 <?php } ?>
             </tbody>
-    </table>     
-    <a href="create.php" class="btn btn-primary" id="novaAssinatura">Novo</a>
+    </table>
+    <div class="d-flex justify-content-end pt-3 pb-3">
+        <a href="create.php" class="btn btn-primary" id="novaAssinatura">Novo</a>
+    </div>
     <script src='../scripts/jquery.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
@@ -74,8 +76,10 @@
             doc.fromHTML(cliente, 14, 173)
             doc.addImage(parametros[0], 76, 173, 50,50)
             doc.fromHTML("___________________________________________", 55, 201)
-            doc.save('teste.pdf')
+            doc.save('assinatura.pdf')
         });
+
+        //implementar chamada ajax para o servidor
     </script>
 </body>
 </html>

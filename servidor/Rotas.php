@@ -12,5 +12,10 @@
             case 'getAll':
                 var_dump($controler->getAllAssinaturas());
             break;
+
+            case 'remover':
+                $array = array('msg' => $controler->removerAssinatura($_POST["id"]));
+                echo json_encode($array);
+            break;
         }
     }
