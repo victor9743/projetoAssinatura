@@ -90,6 +90,7 @@
                     success: function (data) {
                         console.log(data);
                         // redirecionar para o index caso o delete der certo
+                        window.location.href = "index.php"                  
                     }
             });
         })

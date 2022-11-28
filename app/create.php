@@ -114,21 +114,32 @@
 
             saveBtn.onclick = function (e) {
 
+                var nomeCliente = document.getElementById("cliente").value;
+
                 // Converte o canvas para image/png; base64:
                 var image = canvas.toDataURL()
 
                 // Define a imagem como valor a ser enviado:
                 var params = image;
-                $.ajax({
-                    type: "post",
-                    beforeSend: function (xhr) { xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').last().attr('content')) },
-                    url: 'http://localhost/projetoAssinatura/servidor/Rotas.php',
-                    data: { action: "salvar", assinatura: params, cliente: $("#cliente").val() },
-                    success: function (data) {
-                        console.log(data);
-                        // realizar redirecionamento e informar mensagem: assinatura criada com sucesso
-                    }
-                });
+                
+                if (nomeCliente != '') {
+                    alert('Assinatura criada com sucesso!')
+                    window.location.href = "index.php"
+            
+                    $.ajax({
+                        type: "post",
+                        beforeSend: function (xhr) { xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').last().attr('content')) },
+                        url: 'http://localhost/projetoAssinatura/servidor/Rotas.php',
+                        data: { action: "salvar", assinatura: params, cliente: $("#cliente").val() },
+                        success: function (data) {
+                            console.log(data);
+                            // realizar redirecionamento e informar mensagem: assinatura criada com sucesso
+                        }
+                    });
+
+                } else {
+                    alert('É necessário informar o nome e assinatura.')
+                }
             }
         }
     </script>
