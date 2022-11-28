@@ -11,9 +11,9 @@
             $insert = new ConexaoDb();
 
              if($insert->insert($cliente, $assinatura)) {
-                return true;
+                return 1;
              } else {
-                return false;
+                return 2;
              }
 
         }
@@ -22,9 +22,9 @@
             $insert = new ConexaoDb();
 
             if($insert->remove($clienteId)) {
-                return true;
+                return 1;
             } else {
-                return false;
+                return 2;
             }
         }
     }

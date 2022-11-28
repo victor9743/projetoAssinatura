@@ -8,8 +8,8 @@
         }
 
         function salvarAssinatura($cliente, $assinatura){
-            $assinatura = new Assinatura;    
-            return $assinatura->insertAss($cliente, $assinatura);
+            $assinaturaModel = new Assinatura;    
+            return $assinaturaModel->insertAss($cliente, $assinatura);
         }
 
         function removerAssinatura($id) {

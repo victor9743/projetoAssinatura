@@ -14,7 +14,6 @@
             $stmt->bindParam(":CAMPO2", $assinatura);
 
             $stmt->execute();
-
             return $stmt->fetchAll();
 
         }

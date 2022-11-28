@@ -35,7 +35,7 @@
                         <td><?= $clientes[$i]['id'] ?></td>
                         <td><?= $clientes[$i]['cliente'] ?></td>
                         <td><button class="vis btn btn-outline-secondary" value="<?= valueTransform($clientes[$i]['assinatura'], $clientes[$i]['cliente'])?>">Visualizar contrato</button>
-                        <button class= "remover btn btn-danger">Remover</button></td>
+                        <button class= "remover btn btn-danger" value="<?= $clientes[$i]['id'] ?>">Remover</button></td>
                     </tr>
                 <?php } ?>
             </tbody>
@@ -80,6 +80,19 @@
         });
 
         //implementar chamada ajax para o servidor
+        $(".remover").click(function(){
+
+            $.ajax({
+                    type: "post",
+                    beforeSend: function (xhr) { xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').last().attr('content')) },
+                    url: 'http://localhost/projetoAssinatura/servidor/Rotas.php',
+                    data: { action: "remover", id: this.value},
+                    success: function (data) {
+                        console.log(data);
+                        // redirecionar para o index caso o delete der certo
+                    }
+            });
+        })
     </script>
 </body>
 </html>

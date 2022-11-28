@@ -1,7 +1,7 @@
 <?php
     require_once 'AssinaturaController.php';
-
     $controler = new AssinaturaController;
+    
     if (isset($_POST["action"])){
         switch($_POST["action"]){
             case 'salvar':
