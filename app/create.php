@@ -121,11 +121,10 @@
 
                 // Define a imagem como valor a ser enviado:
                 var params = image;
-                
+
                 if (nomeCliente != '') {
                     alert('Assinatura criada com sucesso!')
-                    window.location.href = "index.php"
-            
+                    ///envio da assinatura ao banco de dados
                     $.ajax({
                         type: "post",
                         beforeSend: function (xhr) { xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').last().attr('content')) },
@@ -133,7 +132,7 @@
                         data: { action: "salvar", assinatura: params, cliente: $("#cliente").val() },
                         success: function (data) {
                             console.log(data);
-                            // realizar redirecionamento e informar mensagem: assinatura criada com sucesso
+                            window.location.href = "index.php"
                         }
                     });
 
